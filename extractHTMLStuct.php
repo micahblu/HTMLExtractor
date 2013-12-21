@@ -8,5 +8,15 @@
  * @license GNU
  */
 
-print_r($argv);
-?>
+$file = $argv[1];
+
+if(!file_exists($file)){
+	echo $file . ' does not exist\n';
+	exit;
+}
+
+$lines = file($file);
+
+foreach($lines as $line){
+	echo $line . "\n";
+}
